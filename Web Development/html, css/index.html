@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+
+   <!-- <meta name="keywords" content="write down the keywords separated bt comma">
+        <meta name="description" content="the description">
+        <meta name="author" content="author name"
+        <meta http-equiv="refresh" content="time in seconds" -->
+
+</head>
+<body>
+    <div>
+        <!--This is a comment-->
+        <!--This won't appear on the screen-->
+    </div>
+    <div>
+        <!--heading and paragraph-->
+        <h1>heading 1</h1>
+        <h2>heading 2</h2>
+        <h6>heading 6</h6>
+        <p>paragraph</p>
+    </div>
+    <div>
+        <!--line break-->
+        <br>
+    </div>
+    <div>
+        <!-- <hr> tag-->
+        <p>this is what hr<hr> tag do...</p>
+    </div>
+    <div>
+        <b>this is bold text</b><br>
+        <strong>this is strong text</strong><br>
+        <i>this is italic text</i><br>
+        <u>this is underlined text</u><br>
+        <marquee behavior="" direction="right">this is marquee text</marquee>
+        <small>this small text</small><br>
+        <big>this is big text</big>
+        <p>this is <sub>subscript</sub> text</p>
+        <p>this is <sup>superscript</sup> text</p>
+        <mark>this is marked text</mark><br>
+        <ins>this is inserted text</ins><br>
+        <del>this is deleted text</del>
+    </div>
+    <div>
+        <!--link and image-->
+        <a href="https://github.com/naimur-29">this is a link</a>
+        <br>
+        <img style="border-radius: 50%; width: 320px; height: 320px;" src="assets/image.jpg" alt="anime wallpaper">
+        <br>
+        <a href="image.jpg" download="notImage" style="text-decoration-line: none;">Download</a>
+    </div>
+    <div>
+        <!-- to open a link in a new window use target-->
+        <a href="https://github.com/naimur-29" target="_blank">This link will open on a new tab</a>
+    </div>
+    <br>
+    <div>
+        lists
+        unordered list
+        <ul style="list-style-type: none;">
+            <li>this</li>
+            <li>is</li>
+            <li>a</li>
+            <li>list</li>
+        </ul>
+        ordered list
+        <ol type="1" start="100">
+            <li>this</li>
+            <li>is</li>
+            <li>also</li>
+            <li>list</li>
+        </ol>
+        nested list
+        <ol>
+            <li>
+                <ul style="list-style-type: disc;">
+                    <li>this</li>
+                    <li>this</li>
+                    <li>this</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>is</li>
+                    <li>is</li>
+                    <li>is</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>nested list</li>
+                    <li>nested list</li>
+                    <li>nested list</li>
+                </ul>
+            </li>
+        </ol>
+        description list
+        <dl>
+            <dt>this is description list</dt>
+            <dd>this is definition for description list</dd>
+            <dt>tis is description list</dt>
+            <dt>tis is description list</dt>
+        </dl>
+    </div>
+    <div>
+        <table border="1" style="border-spacing: 0px; width: 100%;">
+            <h3>tables</h3>
+            <tr bgcolor="gray">
+                <th>aaa</th>
+                <td>bbb</td>
+                <td style="background-color: aqua;">ccc</td>
+            </tr>
+            <tr>
+                <th>aaa</th>
+                <td colspan="2">bbb</td>
+            </tr>
+            <tr>
+                <th rowspan="2">aaa</th>
+                <td>bbb</td>
+                <td>ccc</td>
+            </tr>
+            <tr>
+                <td>bbb</td>
+                <td>ccc</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div>
+        <h3>audio</h3>
+        <!-- muted autoplay -->
+        <audio src="assets/audio.mp3" controls loop>
+            your browser doesn't support this audio 
+        </audio>
+    </div>
+    <br>
+    <div>
+        <h3>video</h3>
+        <video src="assets/Nightcore - High - (Lyrics).mp4" style="height: 50%; width: 50%;" controls></video>
+    </div>
+    <div>
+        <br>
+        <h3>button</h3>
+        <button name="simple_button" type="button">vanilla click</button>
+        <button name="submit_button" type="submit" value="submit">submit</button>
+        <button disabled>
+            disabled
+        </button>
+        <button autofocus>
+            autofocus
+        </button>
+        <button onclick="alert('you clicked on a button')">
+            alert
+        </button>
+        <a href="https://github.com/naimur-29" target="_blank">
+            <button>
+                GitHub
+            </button>
+            <br><br>
+            <button style="background-color: yellowgreen;
+                color: aliceblue;
+                font-size: larger;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-style: italic;">
+                styled button
+            </button>
+        </a>
+    </div>
+    <div>
+
+        <br><br>
+        <h1>forms</h1>
+
+        <form action="something.php">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" placeholder="name">            
+
+            <br><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" placeholder="name">
+
+            <br><br>
+            <input type="reset">
+
+            <br><br>
+            <input type="submit">
+
+            <br><br><br><br>
+            <label for="checkbox:">checkbox:</label>
+
+            <input type="radio" value="one" id="one" name="mustHaveSameName">
+            <label for="one">one</label>
+            <input type="radio" value="two" id="two" name="mustHaveSameName">
+            <label for="two">two</label>
+            <input type="radio" value="three" id="three" name="mustHaveSameName">
+            <label for="three">three</label>
+            
+            <br><br><br>
+
+            <label for="payment">payment:</label>
+            <select id="payment">
+                <option value="visa">visa</option>
+                <option value="mastercard">mastercard</option>
+                <option value="cash">cash</option>
+            </select>
+                <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="abc@gmail.com">
+            <input type="submit">
+
+            <br><br>
+
+            <label for="birthday">birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+
+            <br><br>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="0" max="99" value="1">
+
+            <br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <br><br>
+
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" maxlength="12">
+            maxlength 12 numbers...
+
+            <br><br>
+
+            <label for="slider">rate:</label>
+            1 <input type="range" step="25" value="100"> 5
+
+            <br><br>
+
+            <label for="subs">Subscribe:</label>
+            <input type="checkbox" id="subs" name="subs">
+
+            <br><br>
+
+            <label for="file">Upload a file (image only):</label>
+            <input type="file" id="file" name="file" accept=".jpg">
+        </form>
+
+    </div>
+    <br><br><br>
+    <div>
+        <h1>Difference between span and div tag...</h1>
+        <br>
+        <h2>span tag</h2>
+        <p>The benefits of using an external style sheet are: <span style="color: rgb(255, 0, 0);">everything is stored within a single file.</span> once changed/updated, the changes are reflected on all other pages that reference the stylesheet. this makes it easier to maintain larger websites.</p>
+
+        <h2>div tag</h2>
+        <p>The benefits of using an external style sheet are: <div style="color: yellowgreen;">everything is stored within a single file.</div> once changed/updated, the changes are reflected on all other pages that reference the stylesheet. this makes it easier to maintain larger websites.</p>
+    </div>
+</body>
+</html>

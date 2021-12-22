@@ -1,0 +1,299 @@
+#fontDemo_p{
+    font-family:"MV Boli", "Ink Free", sans-serif;
+    /* fonts.google.com */
+    font-style: italic;
+    font-weight: bolder;
+    /* font-size: 40px; */
+    /*text-decoration: underline wavy blue;*/
+    color: tomato;
+}
+
+#border_demo{
+    padding: 5px;
+    /* for padding between text and border */
+    border-style: solid;
+    border-style: dashed;
+    border-style: dotted;
+    border-style: dotted;
+    border-style: ridge;
+    border-style: groove;
+    border-style: inset;
+    border-style: outset;
+    border-width: 5px;
+    /* border-width: 5px 3px 5px 3px; */
+    border-color: #00FF00;
+    border-radius: 50px;
+}
+
+#border_demo_2{
+    background-color: aqua;
+
+    border-bottom-style: dotted;
+    border-top-style: dotted;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-width: 10px;
+    border-right-color: cadetblue;
+}
+
+#background_demo{
+    height: 320px;
+    width: 480px;
+    color: aliceblue;
+    /* background-color: yellow; */
+    /* background: linear-gradient(grey,black); */
+    /* background-repeat: no-repeat; */
+    /* if repeats */
+    /* background-size: cover;
+    background-attachment: fixed; */
+    /* for full body */
+    
+    background-image: url("image.jpg");
+    background-size: cover;
+    /* background-position: center; */
+}
+
+#back{
+    background: linear-gradient(to right,red,orange,green,blue);
+}
+
+/* for full body background */
+/* html{
+    background-image: url(image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+} */
+
+/* to remove the default margin */
+html{
+    margin-top: -21px;
+    margin-bottom: -8px;
+}
+
+#marginDemo{
+    border: 1px solid;
+    width: 300px;
+    text-align: center;
+}
+
+#marginDemo_p1{
+    border: 1px solid;
+    width: 250px;
+    padding: 25px;
+    margin: 25px;
+}
+
+#marginDemo_p2{
+    border: 1px solid;
+    width: 250px;
+    padding: 25px;
+
+    /* margin: top right bottom left; */
+    margin: 25px 50px 25px 50px;
+
+    /* if used parcentage (%) it'll be dynamic */
+
+}
+
+#marginDemo_p3{
+    border: 1px solid;
+    width: 250px;
+    padding: 25px;
+    margin-left: auto;
+}
+
+#marginDemo_p4{
+    border: 1px solid;
+    width: 250px;
+    padding: 25px;
+    margin: auto;
+}
+
+#shadow{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+#shadow h1{
+    border: 1px solid;
+    width: 400px;
+    padding: 30px;
+    text-align: center;
+    margin: auto;
+    /* background-color: black;
+    color: aliceblue; */
+    border-color: orange;
+
+
+    text-shadow: 0px 0px 5px yellow, 0px -3px 5px red;
+    /* positive = right, down 
+    negative = left, up */
+
+    /* horizontal in px
+    vertical in px 
+    blur in px 
+    color any */
+
+    box-shadow: 5px 5px 5px grey;
+}
+
+#poss h1{
+    border: 1px solid;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+    font-size: 40px;
+}
+
+/* #poss{
+    position: relative;
+} */
+
+#box_1{
+    border: 1px solid;
+    height: 50px;
+    width: 50px;
+    background-color: crimson;
+
+    position: sticky;
+
+    bottom: 1%;
+    top: 1%;
+    left: 3%;
+}
+
+#box_2{
+    border: 1px solid;
+    height: 144px;
+    width: 144px;
+    background-color: tomato;
+    
+    position: fixed;
+    
+    bottom: 10%;
+    right: 10%;
+}
+
+#pseudo h1{
+    border: 1px solid;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+    font-size: 40px;
+}
+
+#pseudo a:link{
+    color: #00FF00;
+}
+#pseudo a:visited{
+    color: tomato;
+}
+#pseudo a:hover{
+    color: yellow;
+}
+#pseudo a:active{
+    color: whitesmoke;
+}
+
+#pseudo button:hover{
+    background-color: grey;
+}
+#pseudo button:active{
+    background-color: whitesmoke;
+}
+
+/* #pseudo li:nth-child(5){
+    background-color: tomato;
+} */
+/* #pseudo li:nth-child(3n){
+    background-color: tomato;
+} */
+/* #pseudo li:nth-child(5n+1){
+    background-color: tomato;
+} */
+#pseudo li:nth-child(even){
+    background-color: yellow;
+}
+#pseudo li:nth-child(odd){
+    background-color: yellowgreen;
+}
+
+#box_one{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(205, 50, 50);
+    font-size: 90px;
+    text-align: center;
+}
+#box_two{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(205, 50, 50);
+    font-size: 90px;
+    text-align: center;
+    margin-left: 200px;
+    margin-top: -100px;
+}
+#box_three{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(205, 50, 50);
+    font-size: 90px;
+    text-align: center;
+    margin-left: 400px;
+    margin-top: -100px;
+}
+
+ /* animation: duration timing-function delay iteration-count play-state name; */
+
+#box_one:hover{
+    animation: anime, animess, animes;
+    animation-duration: 10ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+#box_two:hover{
+    animation: animep, anime;
+    animation-duration: 10ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+#box_three:hover{
+    animation: animepp;
+    animation-duration: 10ms;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: ease-in; */
+}
+
+@keyframes animes{
+    from{margin-left: 0%;}
+    to{margin-left: 1%;}
+}
+@keyframes animess{
+    from{margin-left: 1%;}
+    to{margin-left: 0%;}
+}
+@keyframes anime{
+    0%{background-color: #ff0000;}
+    20%{background-color: #ff4343;}
+    40%{background-color: #ff4b4b;}
+    60%{background-color: #ff7c83;}
+    80%{background-color: #ffc5c5;}
+    100%{background-color: #f5f5f5;}
+}
+@keyframes animep{
+    100%{transform: rotateY(20deg);}
+}
+@keyframes animepp{
+    50%{background-color: #f5f5f5;}
+    100%{opacity: 0;}
+}
+@keyframes animeppo{
+    50%{scale: 0;}
+}
+
