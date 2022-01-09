@@ -161,11 +161,186 @@ def sorting_animation(listU):
         print(listU)
         sleep(0.5)
         
+def matrix_insideOut():
+    matrix = [
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ']
+    ]
+
+    while 1 == 1:
+        x = int((len(matrix)/2) - 1)
+        y = int((len(matrix)/2) + 1)
+        for circles in range(int(len(matrix)/2)):
+            for i in range(x, y):
+                for j in range(x, y):
+                    if matrix[i][j] != 0:
+                        matrix[i][j] = 0
+                        clear()
+                        for a in matrix:
+                            for b in a:
+                                print(b, end=' ')
+                            print()
+                        sleep(0.001)
+            x -= 1 #0
+            y += 1 #6
+        print()
+        x = int((len(matrix)/2) - 1)
+        y = int((len(matrix)/2) + 1)
+        for circles in range(int(len(matrix)/2)):
+            for i in range(x, y):
+                for j in range(x, y):
+                    if matrix[i][j] == 0:
+                        matrix[i][j] = ' '
+                        clear()
+                        for a in matrix:
+                            for b in a:
+                                print(b, end=' ')
+                            print()
+                        sleep(0.001)
+            x -= 1
+            y += 1
+        print()
+        # [0, 0, 0, 0, 0, 0],
+        # [0, 0, 0, 0, 0, 0],
+        # [0, 0, 0, 0, 0, 0],
+        # [0, 0, 0, 0, 0, 0],
+        # [0, 0, 0, 0, 0, 0],
+        # [0, 0, 0, 0, 0, 0]
+
+def matrix_insideOut_2():
+    matrix = [
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ']
+    ]
+
+    while 1 == 1:
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j] != 0:
+                    if i != 0 and i != 5:
+                        if j == 0 or j == 5:
+                            matrix[i][j] = 0
+                    else:
+                        matrix[i][j] = 0
+                    clear()
+                    for a in matrix:
+                        for b in a:
+                            print(b, end=' ')
+                        print()
+                    sleep(0.001)
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j] != 0:
+                    if i != 0 and i != 5 and i != 4 and i != 1:
+                        if j == 1 or j == 4:
+                            matrix[i][j] = 0
+                    elif i == 1 or i == 4:
+                        if j != 0 and j != 5:
+                            matrix[i][j] = 0
+                    clear()
+                    for a in matrix:
+                        for b in a:
+                            print(b, end=' ')
+                        print()
+                sleep(0.003)
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j] != 0:
+                    matrix[i][j] = 0
+                    clear()
+                    for a in matrix:
+                        for b in a:
+                            print(b, end=' ')
+                        print()
+                sleep(0.005)
+        ####       
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j] == 0:
+                    if i != 0 and i != 5:
+                        if j == 0 or j == 5:
+                            matrix[i][j] = ' '
+                    else:
+                        matrix[i][j] = ' '
+                    clear()
+                    for a in matrix:
+                        for b in a:
+                            print(b, end=' ')
+                        print()
+                    sleep(0.001)
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j] == 0:
+                    if i != 0 and i != 5 and i != 4 and i != 1:
+                        if j == 1 or j == 4:
+                            matrix[i][j] = ' '
+                    elif i == 1 or i == 4:
+                        if j != 0 and j != 5:
+                            matrix[i][j] = ' '
+                    clear()
+                    for a in matrix:
+                        for b in a:
+                            print(b, end=' ')
+                        print()
+                sleep(0.003)
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j] == 0:
+                    matrix[i][j] = ' '
+                    clear()
+                    for a in matrix:
+                        for b in a:
+                            print(b, end=' ')
+                        print()
+                sleep(0.005)
+
+def normal_loading():
+    while 1 == 1:
+        clear()
+        print("   |  ")
+        print("   |  ")
+        print("   |  ")
+        sleep(0.001)
+        clear()
+        print('    /  ')
+        print('   /  ')
+        print('  /  ')
+        sleep(0.001)
+        clear()
+        print()
+        print('  ---  ')
+        print()
+        sleep(0.001)
+        clear()
+        print()
+        print('-------')
+        print()
+        sleep(0.001)
+        clear()
+        print('  \  ')
+        print('   \  ')
+        print('    \  ')
+        sleep(0.001)
+        clear()
+        print("   |  ")
+        print("   |  ")
+        print("   |  ")
+        sleep(0.001)
 
 
-
-# animation_randMatrix()
+animation_randMatrix()
 # animation_matrixBuilding('X')
 # animation_processing('WELCOME ANIMATION')
 # animation_processing_random('RANDOM TEXT ANIMATION')
 # sorting_animation(scores)
+# matrix_insideOut()
+# matrix_insideOut_2()
+# normal_loading()

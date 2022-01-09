@@ -1,0 +1,128 @@
+Question-1:
+Take two lists from the user (elements of the lists separated by space) of 
+the same size. The first list will contain some names and the second list 
+will contain roll numbers. Your job is to assign each  name a roll number 
+from the list containing numbers following the criteria given below:
+Find the sum of the ASCII value of each name and then sort the names in 
+descending order based on the sum. Then assign the lowest number to the 
+name that has the highest ASCII value sum as a roll number.
+================================================
+Sample Input 1:
+Alan Jack Nancy Jim
+10 15 20 50
+
+Sample Output 1:
+Nancy's roll number is: 10
+Alan's roll number is: 15
+Jack's roll number is: 20
+Jim's roll number is: 50
+
+Explanation1: Here, the summation of the ASCII value of each name are:
+Nancy(505), Alan(380), Jack(377) and Jim(288). So, Nancy got the lowest 
+number (10) from the number list as roll number, then Alan got the second 
+lowest (15), followed by Jack(20) and Jim (50).
+================================================
+Sample Input 2:
+Leo Tim Kim Brad Joey
+55 15 25 19 12
+
+Sample Output 2:
+Joey's roll number is: 12
+Brad's roll number is: 15
+Tim's roll number is: 19
+Kim's roll number is: 25
+Leo's roll number is: 55
+
+Explanation2: Here, the summation of the ASCII value of each name are:
+Joey(407), Brad(377), Tim(298), Kim(289) and Leo(288). So, Joey got the 
+lowest number (12) from the number list as roll number, then Brad got the 
+second lowest (15), followed by Tim(19), Kim(25) and Leo(55).
+
+Question-2:
+The coordinates of different persons are given in the following dictionary.
+
+position = {'A': (2, 5), 'B': (1, 7), 'C': (9, 5), 'D': (2, 6)}
+
+You will take 2 inputs for person X’s location where the first input 
+specifies person X’s current location in the x-axis and the second input 
+specifies person X’s current location in the y-axis.
+
+Your work is to find the person closest to person X by calculating the 
+distance between person X and every other person in the dictionary.
+
+Hint: The distance between two coordinates is given by the formula (You 
+need to import math):
+
+math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+================================================
+Sample Input 1:
+Enter person X’s x coordinate: 3
+Enter person X’s y coordinate: 6
+
+Sample Output 1:
+D
+
+Explanation 1:
+X is at (3,6).
+The distance between person X and person A: 2
+The distance between person X and person B: 5
+The distance between person X and person C: 37
+The distance between person X and person D: 1
+
+The least distance is between person X and D. So, D is selected
+================================================
+
+Sample Input 2:
+Enter person X’s x coordinate: 3
+Enter person X’s y coordinate: 5
+
+Sample Output 2:
+A
+
+Explanation 1:
+X is at (3,5).
+The distance between person X and person A: 1
+The distance between person X and person B: 22
+The distance between person X and person C: 6
+The distance between person X and person D: 2
+The least distance is between person X and A. So, A is selected
+
+Question-3:
+Write a function name “randValues0to9” that takes a string from the user as 
+an argument and generates a random integer between 0 to 9. To generate a 
+random value you need a seed. As your range is 0 to 9, by doing seed%(9+1), 
+you will get a random value between 0 to 9.
+
+To generate the seed, you need to count the number of vowels and consonants 
+in that argument. If the vowels are less in number than the consonants, 
+then your seed will be, seed = no_of_vowels*no_of_consonants+21.
+Otherwise, your seed will be, seed = no_of_vowels*no_of_consonants+57
+================================================
+Function Call1:
+randValues0to9("H@#ello Pe3ter!!")
+
+Sample Output1:
+Vowels: 4
+Consonants: 6
+Seed: 45
+Random value: 5
+
+Explanation1: In “H@#ello Pe3ter!!”: string, there are 4 vowels and 6 
+consonants. So the vowels are less in number than the constants and the 
+seed is, seed = no_of_vowels*no_of_conostants+21 => seed = 4*6+21 = 45
+As your seed is 45, your random value is 45%10 = 5
+
+================================================
+Function Call2:
+randValues0to9("Ayeeeeeeeeeeeee lmao")
+
+Sample Output2:
+Vowels: 16
+Consonants: 3
+Seed: 105
+Random value: 5
+
+Explanation2: In “Ayeeeeeeeeeeeee lmao” string, there are 16 vowels and 3 
+consonants. So the vowels are more in number than the constants and the 
+seed is, seed = no_of_vowels*no_of_conostants+57 => seed = 16*3+57 = 105
+As your seed is 105, your random value is 105%10 = 5
