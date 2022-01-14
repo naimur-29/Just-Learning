@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning CSS</title>
+        <style>
+
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+
+            .container {
+                margin: 0 0 0 1.5%;
+                display: flex; 
+                flex-flow: wrap row;
+                justify-content: flex-start; 
+                align-items: flex-start;
+                align-content: flex-start;
+                width: 100%;
+                height: 100vh;
+            }
+
+            .item {
+                color: white;
+                border: 1px solid inherit;
+                border-radius: 10px;
+                background-color: rgb(35, 166, 202);
+                min-height: 5rem;
+                box-sizing: border-box;
+                text-align: center;
+                padding: 2rem 0;
+                margin: 3% 3% 0 0;
+                flex: 1 1 5rem;
+            }
+
+            .one {
+                background-color: rgb(235, 69, 105);
+                transition: flex-grow 1s, border-radius 0.5s;
+            }
+
+            .two {
+                transition: flex-grow 1s, border-radius 0.5s;
+            }
+
+            .one:hover {
+                cursor: pointer;
+                flex-grow: 0;
+                border-radius: 40px;
+            }
+
+            .two:hover {
+                cursor: pointer;
+                flex-grow: 0;
+                border-radius: 40px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item one">Tap</div>
+            <div class="item two">Tap</div>
+            <div class="item one">Tap</div>
+            <div class="item two">Tap</div>
+            <div class="item one">Tap</div>
+            <div class="item two">Tap</div>
+            <div class="item one">Tap</div>
+            <div class="item two">Tap</div>
+            <div class="item one">Tap</div>
+        </div>
+    </body>
+</html>
