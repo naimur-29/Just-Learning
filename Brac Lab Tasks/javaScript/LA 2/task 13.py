@@ -1,0 +1,1 @@
+print("There are", len(num:=input("Enter the corresponding number: ")), "digits in", num)

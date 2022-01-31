@@ -33,6 +33,15 @@ body {
   cursor: pointer;
 }
 
+.show-modal:hover {
+  background-color: black;
+  color: #fff;
+}
+.show-modal:focus {
+  background-color: black;
+  color: #fff;
+}
+
 .close-modal {
   position: absolute;
   top: 1.2rem;
