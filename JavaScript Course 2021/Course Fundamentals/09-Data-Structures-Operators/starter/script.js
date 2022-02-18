@@ -1,7 +1,7 @@
 'use strict';
 
 // Data needed for a later exercise
-const flights =
+let flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
@@ -233,3 +233,244 @@ for (const player of players1) console.log(players1.indexOf(player), player);
 console.log(players1);
 for (const [index, player] of players1.entries())
   console.log(`${index + 1}. ${player}`);
+
+// optional chaining(?.):
+const days = ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'];
+
+for (const day of days) {
+  console.log(
+    `On ${day} we open at ${restaurant.openingHours[day]?.open ?? `closed`}`
+  );
+}
+
+//test of arr
+const randomArr = new Array();
+const subArr = new Array();
+const n = Math.trunc(Math.random() * 5) + 1;
+
+for (let i = 0; i < n; i++) subArr.push('0');
+for (let i = 0; i < n; i++) randomArr.push(subArr);
+console.log(randomArr);
+
+// challenge 2
+/* Your tasks:
+1. Loop over the game.scored array and print each player name to the console,
+along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already
+studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+Odd of victory Bayern Munich: 1.33
+Odd of draw: 3.25
+Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them
+(except for "draw"). Hint: Note how the odds and the game objects have the
+same property names �
+4. Bonus: Create an object called 'scorers' which contains the names of the
+players who scored as properties, and the number of goals as the value. In this
+game, it will look like this:
+{
+ Gnarby: 1,
+ Hummels: 1,
+ Lewandowski: 2
+}
+GOOD LUCK � */
+
+// task 1
+for (const player of game.scored) console.log(player);
+
+// task 2
+let sum = 0;
+const odds = Object.values(game.odds);
+for (const odd of odds) sum += odd;
+console.log(`The average is ${(sum / odds.length).toFixed(2)}`);
+
+// task 3
+for (const [name, odd] of Object.entries(game.odds)) {
+  const teamStr = name === 'x' ? 'draw' : `victory for ${game[name]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
+
+// task 4
+const scorers = new Object();
+for (const item of game.scored) {
+  scorers[item] = 1;
+}
+console.log(scorers);
+
+// getting rid of duplicates from an array using a set:
+// or making an array from a set and vise versa:
+let arrOfDuplicates = [
+  'paper',
+  'paper',
+  'paper',
+  'paper',
+  'pizza',
+  'pizza',
+  'pizza',
+];
+
+// const tmpSet = new Set(arrOfDuplicates);
+// arrOfDuplicates = new Array(...tmpSet);
+// or simply:
+arrOfDuplicates = [...new Set(arrOfDuplicates)];
+console.log(arrOfDuplicates);
+
+// maps
+const okNowIsThisMap = new Map();
+okNowIsThisMap.set(1, 'nothing');
+okNowIsThisMap.set(2, 'hello world');
+okNowIsThisMap.set('array', arrOfDuplicates);
+
+// as using set method returns the map itself we can also do this:
+okNowIsThisMap
+  .set(1, 'nothing')
+  .set(2, 'hello world')
+  .set('array', arrOfDuplicates);
+console.log(okNowIsThisMap);
+console.log(okNowIsThisMap.get('array').length);
+
+// another way to declare a map:
+const loop = new Map([
+  ['hello', 'world'],
+  ['world', 'hello'],
+]);
+
+console.log(loop.get(loop.get(loop.get('hello'))));
+
+let key = '';
+key = loop.get('world');
+for (let i = 0; i < 10; i++) {
+  console.log(key);
+  key = loop.get(key);
+}
+
+// challenge 3
+
+/* Coding Challenge #3
+Let's continue with our football betting app! This time, we have a map called
+'gameEvents' (see below) with a log of the events that happened during the
+game. The values are the events themselves, and the keys are the minutes in which
+each event happened (a football game has 90 minutes plus some extra time).
+
+Your tasks:
+1. Create an array 'events' of the different game events that happened (no
+duplicates)
+2. After the game has finished, is was found that the yellow card from minute 64
+was unfair. So remove this event from the game events log.
+3. Compute and log the following string to the console: "An event happened, on
+average, every 9 minutes" (keep in mind that a game has 90 minutes)
+4. Loop over 'gameEvents' and log each element to the console, marking
+whether it's in the first half or second half (after 45 min) of the game, like this:
+[FIRST HALF] 17: ⚽ GOAL */
+
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '� Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '� Substitution'],
+  [64, '� Yellow card'],
+  [69, '� Red card'],
+  [70, '� Substitution'],
+  [72, '� Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '� Yellow card'],
+]);
+
+// task 1
+const eventsArray = [...new Set(gameEvents.values())];
+console.log(eventsArray);
+
+// task 2
+gameEvents.delete(64);
+console.log(gameEvents);
+
+// task 3
+console.log(
+  `An event happened, on average, every ${Math.round(
+    90 / gameEvents.size
+  )} minutes`
+);
+
+// task 4
+for (const [time, event] of gameEvents.entries()) {
+  time <= 45
+    ? console.log(`[First Half] ${time}: ${event}`)
+    : console.log(`[Last Half] ${time}: ${event}`);
+}
+
+// string methods:
+const sentenceToArray = sentence => {
+  sentence = sentence.trim();
+  const array = [];
+  while (sentence.includes(' ')) {
+    array.unshift(sentence.slice(sentence.lastIndexOf(' ') + 1));
+    sentence = sentence.slice(0, sentence.lastIndexOf(' '));
+  }
+  array.unshift(sentence);
+  return array;
+};
+
+const firstLetterUpper = string => {
+  string = sentenceToArray(string);
+  let newName = '';
+  string.forEach(
+    element =>
+      (newName +=
+        element[0].toUpperCase() + element.slice(1).toLowerCase() + ' ')
+  );
+  return newName.slice(0, -1);
+};
+
+const capitalizeName = normalName => {
+  const capitalArray = [];
+  normalName
+    .trim()
+    .split(' ')
+    .forEach(word =>
+      capitalArray.push(word.replace(word[0], word[0].toUpperCase()))
+    );
+  return capitalArray.join(' ');
+};
+
+const normalSentence = 'this is a tittle format';
+console.log(firstLetterUpper(normalSentence));
+console.log(capitalizeName(normalSentence));
+
+// there's actually a replaceALl method:
+console.log(
+  'me is me and me is not actually me'.replaceAll(
+    'me',
+    firstLetterUpper('john')
+  )
+);
+
+const underscoreToCammel = sentence => {
+  const tmpArray = [];
+  sentence
+    .trim()
+    .split('_')
+    .forEach((word, index) =>
+      index !== 0
+        ? tmpArray.push(word.replace(word[0], word[0].toUpperCase()))
+        : tmpArray.push(word)
+    );
+  return tmpArray.join('');
+};
+
+console.log(underscoreToCammel('underscore_case to cammel_case'));
+
+// challenge 5?
+// flights =
+//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// const airSeparator = string => {
+//   const tmpArray = [];
+//   string.split('+').forEach(subString => {
+//     const tmpArray2 = subString.split(';');
+//     tmpArray.push(`${tmpArray2[0].slice(1).split('_')}`);
+//   });
+//   return tmpArray.join('');
+// };
+
+// console.log(airSeparator(flights));
