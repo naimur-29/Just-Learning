@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-function App() {
+import Display from "./components/Display/Display";
+import Button from "./components/Buttons/Button";
+
+const buttons = [
+  "<",
+  "&",
+  "&",
+  ">",
+  "U",
+  "L",
+  "R",
+  "D",
+  "1",
+  "2",
+  "3",
+  "0",
+  "4",
+  "5",
+  "6",
+  "*",
+  "7",
+  "8",
+  "9",
+  "#",
+];
+
+const App = () => {
+  const [info, setInfo] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container">
+      <Display />
+      <div className="button-container">
+        {buttons.map((text) => {
+          return <Button text={text} />;
+        })}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

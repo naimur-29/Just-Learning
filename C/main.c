@@ -1,17 +1,31 @@
-#include <stdio.h>
+#include<stdio.h>
 
-const char* grade_identifier (int num) {
-    return  num >= 90 ? "A":
-            num >= 80 && num <= 89 ? "B":
-            num >= 70 && num <= 79 ? "C":
-            num >= 60 && num <= 69 ? "D": "F";
-}
+int main() {
+    int num1,num2;
+    char op[1];
 
-void main () {
-    printf("hello world!\n");
+    printf("Number 1: ");
+    scanf("%d", &num1);
 
-    int arr_of_numbers [10] = {86, 89, 12, 56, 99, 80, 54, 86, 76, 65};
-    for (int i = 0; i < sizeof(arr_of_numbers) / sizeof(int); i++) {
-        printf("%s\n", grade_identifier(arr_of_numbers[i]));
+    printf("operator: ");
+    scanf("%s", &op);
+
+    printf("Number 2: ");
+    scanf("%d", &num2);
+
+    if (*op == '+') {
+        printf("%d", num1+num2);
     }
+    else if (*op == '-') {
+        printf("%d",num1-num2);
+    }
+    else if (*op == '/') {
+        printf("%d",num1/num2);
+    }
+    else if (*op == '*') {
+        printf("%d",num1*num2);
+    }
+    else printf("Invalid input");
+    
+    return 0;
 }
